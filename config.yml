@@ -1,0 +1,35 @@
+appInfo:
+    systemCode: upp-content-rw-aurora
+    description: "Content R/W for Aurora"
+    runbookUrl: "https://sites.google.com/a/ft.com/ft-technology-service-transition/home/run-book-library/upp-content-rw-aurora"
+
+db:
+  url: myurl
+  username: myuser
+  password: mypassword
+  
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+
+  adminConnectors:
+      - type: http
+        port: 8081
+
+  requestLog:
+    appenders:
+      - type: console
+
+        # The timezone used to format dates. HINT: USE THE DEFAULT, UTC.
+        timeZone: UTC
+
+logging:
+  level: INFO
+
+  loggers:
+    io.dropwizard: DEBUG
+    com.ft.api.util.transactionid.TransactionIdFilter: WARN
+
+  appenders:
+    - type: console
