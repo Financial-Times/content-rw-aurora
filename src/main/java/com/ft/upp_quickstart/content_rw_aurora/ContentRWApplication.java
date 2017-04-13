@@ -4,9 +4,6 @@ import com.ft.upp_quickstart.content_rw_aurora.config.ContentRWConfiguration;
 import com.ft.upp_quickstart.content_rw_aurora.config.DbConfig;
 import com.ft.upp_quickstart.content_rw_aurora.resources.ContentResource;
 import com.ft.upp_quickstart.content_rw_aurora.service.ContentRWService;
-import com.ft.platform.dropwizard.AdvancedHealthCheckBundle;
-import com.ft.platform.dropwizard.DefaultGoodToGoChecker;
-import com.ft.platform.dropwizard.GoodToGoBundle;
 
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
@@ -20,9 +17,6 @@ public class ContentRWApplication extends Application<ContentRWConfiguration> {
 
   @Override
   public void initialize(Bootstrap<ContentRWConfiguration> bootstrap) {
-      bootstrap.addBundle(new AdvancedHealthCheckBundle());
-      bootstrap.addBundle(new GoodToGoBundle(new DefaultGoodToGoChecker()));
-      
   }
 
   @Override

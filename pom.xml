@@ -2,12 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.ft.parent</groupId>
-        <artifactId>parentPom</artifactId>
-        <version>2.12</version>
-    </parent>
-
     <groupId>com.ft.upp-quickstart</groupId>
     <artifactId>content-rw-aurora</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -17,20 +11,36 @@
     <url>http://www.ft.com</url>
     <inceptionYear>2017</inceptionYear>
 
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>http://repo1.maven.org/maven2</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>ft-plugin-releases</id>
+            <url>https://jitpack.io</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <dw.version>1.0.2</dw.version>
-        <advanced-dropwizard-healthcheck.version>4.13.4</advanced-dropwizard-healthcheck.version>
+        <!-- advanced-dropwizard-healthcheck.version>4.13.4</advanced-dropwizard-healthcheck.version>
         <jaxrs-build-info-resource.version>1.1</jaxrs-build-info-resource.version>
         <jaxrs.error-handling.version>1.1.2</jaxrs.error-handling.version>
-        <jaxrs.transaction-id-handling.version>2.5</jaxrs.transaction-id-handling.version>
+        <jaxrs.transaction-id-handling.version>2.5</jaxrs.transaction-id-handling.version -->
         <jackson.date.serialization.version>0.1.29</jackson.date.serialization.version>
         <junit.version>4.11</junit.version>
         <mockito-core.version>1.9.5</mockito-core.version>
-        <jersey-version>1.18.1</jersey-version>
-        <jongo.version>1.1</jongo.version>
-        <hamcrest.version>1.2</hamcrest.version>
-        <guava.version>18.0</guava.version>
+        <!-- hamcrest.version>1.2</hamcrest.version>
+        <guava.version>18.0</guava.version -->
         <!-- Plugins -->
         <findbugs.version>2.5.2</findbugs.version>
         <surefire.reportplugin.version>2.12.4</surefire.reportplugin.version>
@@ -41,7 +51,7 @@
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
         <maven-shade-plugin.version>.</maven-shade-plugin.version>
         <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
-        <ft-build-info-maven-plugin.version>1.0</ft-build-info-maven-plugin.version>
+        <!-- ft-build-info-maven-plugin.version>1.0</ft-build-info-maven-plugin.version -->
         <maven-jar-plugin.version>2.3.2</maven-jar-plugin.version>
         <target-jdk>1.8</target-jdk>
     </properties>
@@ -52,13 +62,13 @@
             <artifactId>dropwizard-core</artifactId>
             <version>${dw.version}</version>
         </dependency>
-        <dependency>
+        <!-- dependency>
             <groupId>com.ft</groupId>
             <artifactId>advanced-dropwizard-healthcheck</artifactId>
             <version>${advanced-dropwizard-healthcheck.version}</version>
-        </dependency>
+        </dependency -->
         
-        <dependency>
+        <!-- dependency>
             <groupId>com.ft</groupId>
             <artifactId>jaxrs-build-info-resource</artifactId>
             <version>${jaxrs-build-info-resource.version}</version>
@@ -113,19 +123,19 @@
                     <groupId>com.fasterxml.jackson.core</groupId>
                 </exclusion>
             </exclusions>
-        </dependency>
+        </dependency -->
         
-        <dependency>
+        <!-- dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
+        </dependency -->
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.6</version>
         </dependency>
-<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-<dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>6.0.6</version>
-</dependency>
         
         <dependency>
             <groupId>junit</groupId>
@@ -145,12 +155,12 @@
             <version>${dw.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <!-- dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-library</artifactId>
             <version>${hamcrest.version}</version>
             <scope>test</scope>
-        </dependency>
+        </dependency -->
     </dependencies>
 
     <build>
@@ -264,7 +274,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+            <!-- plugin>
                 <groupId>com.ft.maven.plugins</groupId>
                 <artifactId>ft-build-info-maven-plugin</artifactId>
                 <version>${ft-build-info-maven-plugin.version}</version>
@@ -275,7 +285,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
